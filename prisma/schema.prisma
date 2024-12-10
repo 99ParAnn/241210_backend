@@ -14,7 +14,8 @@ datasource db {
 }
 
 model Child{
-  name String @id
+  id Int @id @default(autoincrement())
+  name String
   address String
   wasGood Boolean
   wantsToy String?
