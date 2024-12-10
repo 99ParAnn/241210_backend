@@ -1,5 +1,5 @@
 
-import { IsBoolean, IsDateString, isNotEmpty, IsNotEmpty, isString, IsString } from "class-validator";
+import { IsBoolean, IsDateString, isNotEmpty, IsNotEmpty, IsOptional, isString, IsString } from "class-validator";
 
 export class CreateChildDto {
 
@@ -16,7 +16,8 @@ export class CreateChildDto {
   wasGood: boolean;
 
   @IsString()
-  wantsToy: string;
+  @IsOptional()
+  wantsToy?: string;
 }
 
-
+ 

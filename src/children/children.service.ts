@@ -32,10 +32,19 @@ export class ChildrenService {
   }
 
   async update(id: number, updateChildDto: UpdateChildDto) {
-    return `This action updates a #${id} child`;
+    return await this.db.child.update({
+      where: {
+        id: id,
+      },
+      data: updateChildDto
+    })
   }
 
   remove(id: number) {
-    return `This action removes a #${id} child`;
+    return this.db.child.delete({
+      where: {
+        id:id,
+      }
+    })
   }
 }
